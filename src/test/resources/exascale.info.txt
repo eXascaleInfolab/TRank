@@ -1,2 +1,2 @@
-XI—the eXascale Infolab—is a new research group at the University of Fribourg, Switzerland.
+XI--the eXascale Infolab--is a new research group at the University of Fribourg, Switzerland.
 We are designing, building and deploying next-generation infrastructures for Big Data, with a focus on social, scientific, and linked data.
