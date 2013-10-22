@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/MEM0R1ES/TRank.png?branch=master)](https://travis-ci.org/MEM0R1ES/TRank)
-
-TRank
+TRank [![Build Status](https://travis-ci.org/MEM0R1ES/TRank.png?branch=master)](https://travis-ci.org/MEM0R1ES/TRank)
 =====
 TRank implements a Scala pipeline for:
 * boilerplate removal on markup content
