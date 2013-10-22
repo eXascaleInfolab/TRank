@@ -16,7 +16,14 @@ class TRanker(content: String, rankingAlgo: RankingAlgo, config: Config) {
   config.checkValid(ConfigFactory.defaultReference(), "TRank")
 
   /**
-   * Default to ANCESTORS ranking algorithm.
+   * Default to standard config.
+   */
+  def this(content: String, rankingAlgo: RankingAlgo) {
+    this(content, rankingAlgo, ConfigFactory.load())
+  }
+
+  /**
+   * Default to ANCESTORS ranking algorithm, and standard config.
    */
   def this(content: String) {
     this(content, new ANCESTORS, ConfigFactory.load())
