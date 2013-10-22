@@ -37,7 +37,7 @@ object EntityLinking {
 
     exact match {
       case Some(x) => return x
-      case None => ???
+      case None =>
     }
     bool match {
       case Some(x) => return x
