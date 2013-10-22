@@ -15,9 +15,13 @@ For example, a document containing the label *University of Fribourg* will retur
 http://dbpedia.org/resource/University_of_Fribourg ->
 
 Seq(http://dbpedia.org/class/yago/UniversitiesInSwitzerland,
-http://dbpedia.org/class/yago/PuBlicUniversities, http://schema.org/CollegeOrUniversity,
-http://dbpedia.org/ontology/University, http://dbpedia.org/ontology/EducationalInstitution,
-http://schema.org/EducationalOrganization, http://dbpedia.org/ontology/Organisation, http://schema.org/Organization,
+http://dbpedia.org/class/yago/PuBlicUniversities,
+http://schema.org/CollegeOrUniversity,
+http://dbpedia.org/ontology/University,
+http://dbpedia.org/ontology/EducationalInstitution,
+http://schema.org/EducationalOrganization,
+http://dbpedia.org/ontology/Organisation,
+http://schema.org/Organization,
 http://dbpedia.org/ontology/Agent)
 ```
 
