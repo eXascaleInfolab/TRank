@@ -16,7 +16,8 @@ class DEPTHSpec extends FlatSpec {
 
   "A DEPTH ranker" should "rank types by maximum depth" in {
     val ranked = new DEPTH().rank(Map(type1, type2))
-    assert(ranked(0).toString === "http://type2")
+    assert(ranked(0)._1.toString === "http://type2")
+    assert(ranked(0)._2 === 4)
   }
   
   it should "not fail when no types are provided" in {

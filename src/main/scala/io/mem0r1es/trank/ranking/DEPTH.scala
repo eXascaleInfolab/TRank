@@ -10,6 +10,9 @@ class DEPTH extends RankingAlgo {
   /**
    * Rank types by inverse-sort on the hierarchy level.
    */
-  override def rank(entityTypes: Map[URI, HierInfo]): Seq[URI] =
-    entityTypes.toSeq.sortBy(_._2.level).reverse.map(_._1)
+  override def rank(entityTypes: Map[URI, HierInfo]): Seq[(URI, Double)] = {
+      entityTypes.toSeq.map { case (k,v) => (k, v.level.toDouble)}
+      .sortBy(_._2)
+      .reverse
+  }
 }

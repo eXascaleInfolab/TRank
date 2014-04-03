@@ -7,15 +7,18 @@ class ANCESTORS extends RankingAlgo {
   /**
    * Rank types by inverse-sort on the # of ANCESTORS contained in the type set.
    */
-  override def rank(entityTypes: Map[URI, HierInfo]): Seq[URI] = {
-    val allTypes = entityTypes.keySet
+  override def rank(entityTypes: Map[URI, HierInfo]): Seq[(URI, Double)] = {
 
-    def score(path: Seq[URI]): Int = {
-      path filter (allTypes.contains(_)) length
+    def score(path: Seq[URI]): Double = {
+      path.filter (entityTypes.contains(_))
+      .length
     }
 
     entityTypes.map {
       case (k, v) => (k, score(v.path))
-    }.toSeq.sortBy(_._2).reverse.map(_._1)
+    }
+    .toSeq
+    .sortBy(_._2)
+    .reverse
   }
 }

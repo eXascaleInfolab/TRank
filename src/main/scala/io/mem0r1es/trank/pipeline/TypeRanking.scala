@@ -18,9 +18,9 @@ object TypeRanking {
 
   def rankTypes(entityTypes: Map[URI, Set[URI]],
     rankingAlgo: RankingAlgo,
-    config: Config): Map[URI, Seq[URI]] = {
+    config: Config): Map[URI, Seq[(URI, Double)]] = {
 
-    var ranked = Map[URI, Seq[URI]]()
+    var ranked = Map[URI, Seq[(URI, Double)]]()
 
     entityTypes.foreach {
       case (uri, types) =>
