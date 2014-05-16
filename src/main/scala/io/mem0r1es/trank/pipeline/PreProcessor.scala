@@ -1,27 +1,26 @@
 package io.mem0r1es.trank.pipeline
 
-import de.l3s.boilerpipe.extractors.ArticleExtractor
-import de.l3s.boilerpipe.extractors.DefaultExtractor
+import org.apache.tika.sax.BodyContentHandler
+import org.apache.tika.metadata.Metadata
+import org.apache.tika.parser.html.HtmlParser
+import java.io.InputStream
+import org.apache.tika.parser.ParseContext
+
 
 object PreProcessor {
 
   /**
-   * Runs the content pre-processing step (e.g., HTML boilerplate removal)
+   * Runs the content pre-processing step (e.g., HTML tags removal)
    */
-  def preProcess(content: String): String = {
-    boilerpipe(content)
+  def preProcess(content: InputStream): String = {
+    extractTextFromHTML(content)
   }
 
-  private def boilerpipe(content: String): String = {
-    val articleExtr = Option(ArticleExtractor.INSTANCE.getText(content))
-    val defaultExtr = Option(DefaultExtractor.INSTANCE.getText(content))
-
-    // gives priority to the ArticleExtractor, allegedly leading to better results
-    if (articleExtr.getOrElse("") nonEmpty)
-      return articleExtr.get
-    if (defaultExtr.getOrElse("") nonEmpty)
-      return defaultExtr.get
-
-    return content
+  private def extractTextFromHTML(content: InputStream): String = {
+    val handler = new BodyContentHandler()
+    val metadata = new Metadata()
+    new HtmlParser().parse(content, handler, metadata, new ParseContext())
+    
+    handler.toString
   }
 }
