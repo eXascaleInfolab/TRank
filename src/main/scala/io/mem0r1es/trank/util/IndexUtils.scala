@@ -1,10 +1,11 @@
 package io.mem0r1es.trank.util
 
-import org.apache.lucene.search.IndexSearcher
-import com.typesafe.config.Config
-import org.apache.lucene.store.NIOFSDirectory
-import org.apache.lucene.index.IndexReader
 import java.io.File
+
+import com.typesafe.config.Config
+import org.apache.lucene.index.DirectoryReader
+import org.apache.lucene.search.IndexSearcher
+import org.apache.lucene.store.NIOFSDirectory
 
 
 object IndexUtils {
@@ -28,7 +29,7 @@ object IndexUtils {
   private def createIndexSearcher(indexType: TRankIndexType, config: Config): IndexSearcher = {
     val indexPath = new File(config.getString("TRank.index_basepath") + "/" + indexType)
     val directory = new NIOFSDirectory(indexPath)
-    val reader = IndexReader.open(directory)
+    val reader = DirectoryReader.open(directory)
     new IndexSearcher(reader)
   }
 }

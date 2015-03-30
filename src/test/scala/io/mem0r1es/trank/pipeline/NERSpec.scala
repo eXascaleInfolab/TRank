@@ -11,17 +11,16 @@ class NERSpec extends FlatSpec {
     val entities = runNER(content)
     assert(entities contains ("Switzerland"))
     assert(entities contains ("University of Fribourg"))
-    assert(entities contains ("Big Data"))
   }
 
   it should "not fail with content without Named Entities" in {
     val content = "Just some basic text without any named entities."
     val entities = runNER(content)
-    assert(entities isEmpty)
+    assert(entities.isEmpty)
   }
 
   it should "not fail with empty content" in {
     val entities = runNER("")
-    assert(entities isEmpty)
+    assert(entities.isEmpty)
   }
 }

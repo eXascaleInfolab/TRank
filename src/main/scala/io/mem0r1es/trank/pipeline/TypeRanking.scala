@@ -2,7 +2,7 @@ package io.mem0r1es.trank.pipeline
 
 import java.net.URI
 
-import scala.util.parsing.json.JSON
+import play.api.libs.json.{JsValue, Json}
 
 import org.apache.lucene.index.Term
 import org.apache.lucene.search.TermQuery
@@ -37,9 +37,9 @@ object TypeRanking {
     if (docs.scoreDocs.length > 0) {
       val d = searcher.doc(docs.scoreDocs(0).doc)
       val level = d.get("level").toInt
-      val path = JSON.parseFull(d.get("path"))
-      path.get match {
-        case l: List[Any] => new HierInfo(level, l.map(t => new URI(t.toString)))
+      val path: JsValue = Json.parse(d.get("path"))
+      path.asOpt[Array[String]] match {
+        case Some(l: Array[String]) => new HierInfo(level, l.map(t => new URI(t.toString)))
         case _ => new HierInfo(level, Seq[URI]())
       }
     } else {
