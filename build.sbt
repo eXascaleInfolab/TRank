@@ -17,8 +17,8 @@ resolvers += "Typesafe Repo" at "http://repo.typesafe.com/typesafe/releases/"
 
 // CoreNLP + resources
 libraryDependencies ++= Seq(
-    "edu.stanford.nlp" % "stanford-corenlp" % "3.5.2",
-    "edu.stanford.nlp" % "stanford-corenlp" % "3.5.2" classifier "models"
+    "edu.stanford.nlp" % "stanford-corenlp" % "3.4.1",
+    "edu.stanford.nlp" % "stanford-corenlp" % "3.4.1" classifier "models"
 )
 
 // Lucene deps
