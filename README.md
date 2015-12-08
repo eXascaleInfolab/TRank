@@ -45,7 +45,7 @@ for the final step, and through similar data structures for all the intermediate
 
 ### Indexes
 TRank requires 3 Lucene indexes that are available for
-[download here](http://exascale.info/sites/default/files/uploaded/trank/trank-indexes.tgz).
+[download here](http://ftp.exascale.info/sites/default/files/uploaded/trank/trank-indexes.tgz).
 The .tgz can be extracted in the classpath of the library, and TRank will start to use seamlessly the 3 indexes.
 
 **IMPORTANT:** do not change the directory structure of `trank-indexes/`.
@@ -73,5 +73,5 @@ type hierarchies (including DBPedia, Freebase, and schema.org) shows that hierar
 results when picking entity types to be displayed to the end-user.
 
 
-For more information, check the [ISWC2013 paper](http://exascale.info/sites/default/files/entityTypes.pdf).
+For more information, check the [ISWC2013 paper](http://ftp.exascale.info/sites/default/files/entityTypes.pdf).
 
