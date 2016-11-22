@@ -45,7 +45,7 @@ for the final step, and through similar data structures for all the intermediate
 
 ### Indexes
 TRank requires 3 Lucene indexes that are available for
-[download here](http://ftp.exascale.info/sites/default/files/uploaded/trank/trank-indexes.tgz).
+[download here](http://trank.exascale.info/downloads/index.html).
 The .tgz can be extracted in the classpath of the library, and TRank will start to use seamlessly the 3 indexes.
 
 **IMPORTANT:** do not change the directory structure of `trank-indexes/`.
